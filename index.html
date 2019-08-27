@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>	
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+	<link rel="shortcut icon" href="images/favicon.png" /> 
+	<script src="js/jquery 3.4.1.js"></script>
+ 	<title> Prework </title>
+
+
+<style>
+
+img{
+	margin-top: 180px;
+
+}
+
+</style>
+
+</head>
+	<body>
+	
+		<p id="texto3"></p>
+			<div style="text-align: center;" id="log">
+				<img id="cat" src="gato.jpg" alt="Gato noruego" style=" border-radius: 50px; filter: contrast(115%)">
+			</div>
+
+
+
+
+
+<script>
+
+$( "img" ).on( "mouseover", function(){
+	$("img").css("cursor", "crosshair");
+});
+
+$( "img" ).on( "mousemove", function(e){
+	$('img').height(e.pageY);
+});
+
+
+
+$( "img" ).on( "mousemove", function(e){
+	
+	var ancho = $("img").width();
+	var x = (e.pageX - this.offsetLeft)/ancho;
+        	$("#texto3").text("Coordenada X del ratón dentro del elemento: " + x + "Ancho: "+ancho);
+	
+	$("img").css("opacity" , x);
+
+});
+
+
+
+//En este caso firstEvent se ejecutará una vez por cada evento y por cada elemento. Es decir, la primera vez que se haga foco en cada uno de los <input> se ejecutará esta función.
+
+</script>
+
+
+
+	</body>	    
+</html>
